@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_res_branch_form" model="ir.ui.view">
+        <field name="name">res.branch.form</field>
+        <field name="model">res.branch</field>
+        <field name="arch" type="xml">
+        	<form string="Branch Information">
+        		<sheet>
+        			<group cols="4">
+        				<group>
+        					<field name="name"/>
+        					<field name="company_id"/>
+        					<field name="telephone_no"/>
+					    </group>
+					    <group>
+        					<field name="address"/>
+					    </group>
+        			</group>
+			    </sheet>
+		    </form>
+	    </field>
+	</record>
+	
+	<record id="view_res_branch_tree" model="ir.ui.view">
+		<field name="name">res.branch.tree</field>
+		<field name="model">res.branch</field>
+		<field name="arch" type="xml">
+			<tree string="Branch Information">
+				<field name="name"/>
+				<field name="company_id"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="action_res_branch_form" model="ir.actions.act_window">
+		<field name="name">Branch</field>
+		<field name="res_model">res.branch</field>
+		<field name="binding_view_types">form</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	
+	<menuitem action="action_res_branch_form" name="Branch"
+            id="menu_action_res_branch"
+            parent="base.menu_users" groups="base.group_no_one"
+            />
+
+    <record id="fleet_vehicle_odometer_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.odometer.form</field>
+        <field name="model">fleet.vehicle.odometer</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="unit" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_users_form_inherit_branch" model="ir.ui.view">
+            <field name="name">view.users.form.inherit.branch</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[2]/group[1]" position="before">
+                    <group name="branch">
+                        <field name="branch_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="branch_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+                
+    <record id="view_fleet_vehicle_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.branch.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
+        <field name="arch" type="xml">
+            <field name="model_year" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_fleet_vehicle_odometer_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.odometer.branch.form</field>
+        <field name="model">fleet.vehicle.odometer</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_form" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>  
+
+    <record id="view_fleet_vehicle_log_contract_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.contract.branch.form</field>
+        <field name="model">fleet.vehicle.log.contract</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_contract_view_form" />
+        <field name="arch" type="xml">
+            <field name="insurer_id" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>     
+
+    <!-- <record id="view_fleet_vehicle_cost_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.cost.branch.form</field>
+        <field name="model">fleet.vehicle.cost</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_costs_view_form" />
+        <field name="arch" type="xml">
+            <field name="date" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record> -->        
+
+    <!-- <record id="view_fleet_vehicle_log_fuel_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.fuel.branch.form</field>
+        <field name="model">fleet.vehicle.log.fuel</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_fuel_view_form" />
+        <field name="arch" type="xml">
+            <field name="vendor_id" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>  -->       
+
+    <record id="view_fleet_vehicle_log_services_form" model="ir.ui.view">
+        <field name="name">fleet.vehicle.log.services.branch.form</field>
+        <field name="model">fleet.vehicle.log.services</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_log_services_view_form" />
+        <field name="arch" type="xml">
+            <field name="vendor_id" position="after">
+                <field name="branch_id"/>
+            </field>
+        </field>
+    </record>  
+
+    </data>
+</odoo>
