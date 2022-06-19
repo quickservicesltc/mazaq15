@@ -63,7 +63,8 @@
 </record>
 <record model="ir.rule" id="ir_values_stock_user_inventory">
 	<field name="name">Stock Inventory User</field>
-	<field name="model_id" ref="stock.model_stock_inventory"/>
+<!--	<field name="model_id" ref="stock.model_stock_inventory"/>-->
+	<field name="model_id" ref="stock.model_stock_warehouse"/>
 	<field name="domain_force">[("location_id", "in", user.allowed_location_ids_computed._ids)]</field>
 	<field name="groups" eval="[(4, ref('stock.group_stock_user'))]" />
 	<field name="perm_read" eval="True"/>
@@ -73,7 +74,8 @@
 </record>
 <record model="ir.rule" id="ir_values_stock_user_inventory_line">
 	<field name="name">Stock Inventory Line User</field>
-	<field name="model_id" ref="stock.model_stock_inventory_line"/>
+<!--	<field name="model_id" ref="stock.model_stock_inventory_line"/>-->
+	<field name="model_id" ref="stock.model_stock_move_line"/>
 	<field name="domain_force">[("location_id", "in", user.allowed_location_ids_computed._ids)]</field>
 	<field name="groups" eval="[(4, ref('stock.group_stock_user'))]" />
 	<field name="perm_read" eval="True"/>
@@ -155,7 +157,8 @@
 </record>
 <record model="ir.rule" id="ir_values_stock_manager_inventory">
 	<field name="name">Stock Inventory Manager</field>
-	<field name="model_id" ref="stock.model_stock_inventory"/>
+<!--	<field name="model_id" ref="stock.model_stock_inventory"/>-->
+	<field name="model_id" ref="stock.model_stock_warehouse"/>
 	<field name="domain_force">[(1, "=", 1)]</field>
 	<field name="groups" eval="[(4, ref('stock.group_stock_manager'))]" />
 	<field name="perm_read" eval="True"/>
@@ -165,7 +168,8 @@
 </record>
 <record model="ir.rule" id="ir_values_stock_manager_inventory_line">
 	<field name="name">Stock Inventory Line Manager</field>
-	<field name="model_id" ref="stock.model_stock_inventory_line"/>
+<!--	<field name="model_id" ref="stock.model_stock_inventory_line"/>-->
+	<field name="model_id" ref="stock.model_stock_move_line"/>
 	<field name="domain_force">[(1, "=", 1)]</field>
 	<field name="groups" eval="[(4, ref('stock.group_stock_manager'))]" />
 	<field name="perm_read" eval="True"/>
