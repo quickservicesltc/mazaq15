@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_account_journal_form">
+            <field name="name">pos.payment.method.form.view</field>
+            <field name="model">pos.payment.method</field>
+            <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form" />
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name='allow_card_charges' />
+                    <field name='charges_type' attrs="{'required':[('allow_card_charges','==',True)],'invisible':[('allow_card_charges','==',False)]}"/>
+                    <field name='wv_amount' attrs="{'required':[('allow_card_charges','==',True)],'invisible':[('allow_card_charges','==',False)]}"/>
+                    <field name="card_product" attrs="{'required':[('allow_card_charges','==',True)],'invisible':[('allow_card_charges','==',False)]}"/>
+                    <field name="allow_limit_amount" attrs="{'required':[('allow_card_charges','==',True)],'invisible':[('allow_card_charges','==',False)]}"/>
+                    <field name="amount_min" attrs="{'required':[('allow_card_charges','==',True),('allow_limit_amount','==',True)],'invisible':['|',('allow_card_charges','==',False),('allow_limit_amount','==',False)]}"/>
+                    <field name="amount_max" attrs="{'required':[('allow_card_charges','==',True),('allow_limit_amount','==',True)],'invisible':['|',('allow_card_charges','==',False),('allow_limit_amount','==',False)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

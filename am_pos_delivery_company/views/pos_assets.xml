@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<!-- <template id='pos_delivery_assets' name='POS Assets' inherit_id='point_of_sale.assets'>
+			<xpath expr='.' position='inside'>
+
+				<script type='text/javascript' src='/am_pos_delivery_company/static/src/js/ControlButtons.js'/>
+
+			</xpath>
+		</template> -->
+
+		<record id="inherit_view_pos_config_delivery" model="ir.ui.view">
+			<field name="name">inherit.view.pos.config.delivery</field>
+			<field name="model">pos.config</field>
+			<field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//div[@id='pricing']" position="after">
+					<h2>POS Delivery Configuration</h2>
+					<div class="row mt16 o_settings_container" id="delivery_buttons">
+						<div id="TheChefz" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="TheChefz"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="TheChefz" string="The Chefz"/>
+
+							</div>
+						</div>
+
+						<div id="Mrsool" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="Mrsool"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="Mrsool" string="Mrsool"/>
+
+							</div>
+						</div>
+
+						<div id="Trker" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="Trker"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="Trker" string="Trker"/>
+
+							</div>
+						</div>
+						<div id="Toyo" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="Toyo"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="Toyo" string="Toyo"/>
+
+							</div>
+						</div>
+						<div id="HungerStation" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="HungerStation"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="HungerStation" string="Hunger Station"/>
+
+							</div>
+						</div>
+						<div id="Jahez" class="col-xs-12 col-md-6 o_setting_box">
+							<div class="o_setting_left_pane">
+								<field name="Jahez"/>
+							</div>
+							<div class="o_setting_right_pane">
+								<label for="Jahez" string="Jahez"/>
+
+							</div>
+						</div>
+
+					</div>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

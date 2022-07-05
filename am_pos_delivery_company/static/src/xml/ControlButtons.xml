@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="am_pos_delivery_company.TheChefzButton" owl="1">
+      <img class="control-button" src="/am_pos_delivery_company/static/src/img/TheChefz.jpeg" alt="TheChefz" style="width:0%; height:5%"/>
+
+    </t>
+
+    <t t-name="am_pos_delivery_company.MrsoolButton" owl="1">
+      <img class="control-button" src="/am_pos_delivery_company/static/src/img/Mrsool.jpeg" alt="Mrsool" style="width:26%; height:5%"/>
+
+    </t>
+    <t t-name="am_pos_delivery_company.ToyoButton" owl="1">
+      <img class="control-button" src="/am_pos_delivery_company/static/src/img/Toyo.jpeg" alt="Toyo" style="width:0%; height:10%"/>
+
+    </t>
+    <t t-name="am_pos_delivery_company.TrkerButton" owl="1">
+      <img class="control-button" src="/am_pos_delivery_company/static/src/img/Trker.jpeg" alt="Trker" style="width:0%; height:10%"/>
+
+        <!-- <div class="control-button">
+
+        </div> -->
+    </t>
+
+
+
+
+
+    <t t-name="am_pos_delivery_company.HungerStationButton" owl="1">
+      <img class="control-button"  src="/am_pos_delivery_company/static/src/img/HungerStation.jpeg" alt="HungerStation" style="width:0%; height:10%"/>
+
+    </t>
+
+    <t t-name="am_pos_delivery_company.JahezButton" owl="1">
+      <img class="control-button"  src="/am_pos_delivery_company/static/src/img/Jahez.jpeg" alt="Jahez" style="width:3%; height:10%"/>
+
+    </t>
+
+</templates>
